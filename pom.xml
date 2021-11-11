@@ -45,10 +45,35 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.7</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.7</version>
+				<executions>
+				<execution>
+					<id>default-prepare-agent</id>
+					<goals>
+					<goal>prepare-agent</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>jacoco-site</id>
+					<phase>post-integration-test</phase>
+					<goals>
+					<goal>report</goal>
+					</goals>
+				</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -63,5 +88,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
