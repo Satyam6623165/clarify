@@ -61,7 +61,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml -Dmaven.test.skip=true
       - name: generate report codecov
-        run: mvn cobertura:cobertura
+        run: mvn jacoco:report
       - name: Upload coverage
         if: success()
         run: |
