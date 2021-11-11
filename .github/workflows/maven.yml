@@ -6,8 +6,8 @@ on:
 
 env:
   DB_HOST: localhost
-  DB_USERNAME: postgres
-  DB_PASSWORD: postgres
+  DB_USERNAME: sats
+  DB_PASSWORD: mechanics
     
 jobs:
   compile:
@@ -31,8 +31,8 @@ jobs:
         image: postgres:latest
         env:
           POSTGRES_DB: clarify        
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: mechanics
+          POSTGRES_USER: sats
         ports:
           - 5432:5432
         options: >-
