@@ -48,9 +48,9 @@ jobs:
           java-version: 1.11
       - name: Run unit tests
         run: mvn test
-  build:
+  coverage:
     runs-on: ubuntu-latest
-    name: Run mvn build and generate coverage report
+    name: Generate coverage report
     needs: test
     steps:
       - uses: actions/checkout@v2
@@ -58,10 +58,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml -Dmaven.test.skip=true
       - name: generate report codecov
-        run: mvn jacoco:report
+        run: mvn test jacoco:report
       - name: Upload coverage
         if: success()
         run: |
