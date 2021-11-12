@@ -13,7 +13,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Running tests and generate coverage report
-    needs: compile
     services:
       postgres:
         image: postgres:latest
