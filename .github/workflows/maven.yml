@@ -5,9 +5,8 @@ on:
     branches: [ main ]
 
 env:
-  DB_HOST: localhost
-  DB_USERNAME: sats
-  DB_PASSWORD: mechanics
+  APP_DB_HOST: localhost
+  APP_MONGO_DB: clarify
     
 jobs:
   test:
@@ -15,13 +14,11 @@ jobs:
     name: Running tests and generate coverage report
     services:
       postgres:
-        image: postgres:latest
+        image: mongo:latest
         env:
-          POSTGRES_DB: clarify        
-          POSTGRES_PASSWORD: mechanics
-          POSTGRES_USER: sats
+          MONGO_INITDB_DATABASE: ${APP_MONGO_DB}
         ports:
-          - 5432:5432
+          - 27017:27017
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
