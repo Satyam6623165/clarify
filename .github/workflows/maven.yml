@@ -36,3 +36,12 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         shell: bash
+      - name: trigger deploy
+        if: success()
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_GHA_PAT }}
+          repository: ${{ github.repository }}
+          event-type: trigger-deploy
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+    
