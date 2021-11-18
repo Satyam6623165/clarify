@@ -13,9 +13,8 @@
 name: Build and Deploy to GKE
 
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types: [trigger-deploy]
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
@@ -33,6 +32,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+          ref: ${{ github.event.client_payload.sha }}
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@v0.2.0
