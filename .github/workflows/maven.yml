@@ -4,21 +4,10 @@ on:
   push:
     branches: [ main ]
 
-env:
-  APP_DB_HOST: localhost
-  APP_MONGO_DB: clarify
-    
 jobs:
   test:
     runs-on: ubuntu-latest
     name: Running tests and generate coverage report
-    services:
-      mongo:
-        image: mongo:latest
-        env:
-          MONGO_INITDB_DATABASE: ${APP_MONGO_DB}
-        ports:
-          - 27017:27017
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 1.11
