@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: clarify-backend
-          image: gcr.io/clarify-332505/clarify
-          imagePullPolicy: IfNotPresent
+          image: gcr.io/clarify-332505/clarify:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---
