@@ -1,6 +1,6 @@
 package com.example.clarify.model;
 
-import com.example.clarify.model.enums.Role;
+import com.example.clarify.enums.Role;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -27,7 +27,7 @@ public class User {
 
     private Integer lives;
 
-    User() {
+    public User() {
         this.lives = 3;
     }
 }

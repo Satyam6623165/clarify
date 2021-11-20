@@ -1,4 +1,4 @@
-package com.example.clarify.model.enums;
+package com.example.clarify.enums;
 
 public enum Role {
     STUDENT,
