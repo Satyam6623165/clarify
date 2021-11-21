@@ -21,7 +21,6 @@ public class UserController {
 
     @GetMapping("/{email}")
     public ResponseEntity<User> findByEmail(@PathVariable String email) {
-        System.out.println("testing");
         log.info("Fetching user by email: {}", email);
         Optional<User> user = userService.findByEmail(email);
         if(user.isPresent()) {

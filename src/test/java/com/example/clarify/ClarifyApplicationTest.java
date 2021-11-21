@@ -1,13 +1,13 @@
 package com.example.clarify;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 
-@SpringBootTest
-class ClarifyApplicationTest {
+@RunWith(MockitoJUnitRunner.class)
+public class ClarifyApplicationTest {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
-
 }
