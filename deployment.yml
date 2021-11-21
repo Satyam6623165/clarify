@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: clarify-backend
-          image: gcr.io/clarify-332505/clarify
-          imagePullPolicy: Always
+          image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
 ---
