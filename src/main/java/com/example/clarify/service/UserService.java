@@ -8,6 +8,6 @@ import java.util.Optional;
 public interface UserService {
     List<User> findAllUsers();
     Optional<User> findByEmail(String email);
-    User saveUser(User user);
+    User save(User user);
     void deleteAllUsers();
 }

@@ -16,7 +16,6 @@ import java.util.Optional;
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
-
     private final UserService userService;
 
     @GetMapping("/{email}")
@@ -44,7 +43,7 @@ public class UserController {
     public ResponseEntity<User> saveUser(@RequestBody User user) {
         log.info("Saving user: {}", user);
         try {
-            User userSaved = userService.saveUser(user);
+            User userSaved = userService.save(user);
             return new ResponseEntity<>(userSaved, HttpStatus.OK);
         } catch(Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -52,7 +51,7 @@ public class UserController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Boolean> deleteAll() {
+    public ResponseEntity<Void> deleteAll() {
         log.info("Deleting all users from db");
         try {
             userService.deleteAllUsers();
