@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface ChannelService {
     Channel save(Channel channel);
-    void delete(Channel channel);
+    void deleteById(String cid);
     Optional<Channel> findByTitle(String title);
     Optional<Channel> findByCid(String cid);
     List<Channel> findAllChannels();

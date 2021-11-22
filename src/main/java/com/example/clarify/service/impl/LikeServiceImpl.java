@@ -18,7 +18,7 @@ public class LikeServiceImpl implements LikeService {
 
     @Override
     public Like save(Like like) {
-        return likesRepository.insert(like);
+        return likesRepository.save(like);
     }
 
     @Override

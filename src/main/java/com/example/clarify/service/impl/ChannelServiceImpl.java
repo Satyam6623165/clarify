@@ -16,12 +16,12 @@ public class ChannelServiceImpl implements ChannelService {
 
     @Override
     public Channel save(Channel channel) {
-        return channelRepository.insert(channel);
+        return channelRepository.save(channel);
     }
 
     @Override
-    public void delete(Channel channel) {
-        channelRepository.delete(channel);
+    public void deleteById(String cid) {
+        channelRepository.deleteById(cid);
     }
 
     @Override

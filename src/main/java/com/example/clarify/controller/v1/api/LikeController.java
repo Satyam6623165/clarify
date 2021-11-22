@@ -31,7 +31,7 @@ public class LikeController {
     public ResponseEntity<Like> saveLike(@RequestBody Like like) {
         try {
             Like savedLike = likesService.save(like);
-            return new ResponseEntity<>(savedLike, HttpStatus.OK);
+            return new ResponseEntity<>(savedLike, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

@@ -33,16 +33,16 @@ public class ChannelController {
         log.info("Received Request object : {}", channel);
         try {
             Channel savedChannel = channelService.save(channel);
-            return new ResponseEntity<>(savedChannel, HttpStatus.OK);
+            return new ResponseEntity<>(savedChannel, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> delete(@RequestBody Channel channel) {
+    @DeleteMapping("/{cid}")
+    public ResponseEntity<Void> delete(@PathVariable String cid) {
         try {
-            channelService.delete(channel);
+            channelService.deleteById(cid);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

@@ -29,7 +29,7 @@ public class TagController {
     public ResponseEntity<Tag> save(@RequestBody Tag tag) {
         try {
             Tag savedTag = tagService.save(tag);
-            return new ResponseEntity<>(savedTag, HttpStatus.OK);
+            return new ResponseEntity<>(savedTag, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -45,10 +45,10 @@ public class TagController {
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> delete(@RequestBody Tag tag) {
+    @DeleteMapping("/{tid}")
+    public ResponseEntity<Void> delete(@PathVariable String tid) {
         try {
-            tagService.delete(tag);
+            tagService.deleteById(tid);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
