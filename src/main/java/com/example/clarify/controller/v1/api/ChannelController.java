@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/channel")
+@RequestMapping("/api/v1/channels")
 @RequiredArgsConstructor
 public class ChannelController {
     private final ChannelService channelService;
