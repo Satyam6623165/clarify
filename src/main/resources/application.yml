@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://mongo:mongo@mongo-cluster.ashj2.mongodb.net/clarify?retryWrites=true&w=majority
+      database: clarify
+      auto-index-creation: true

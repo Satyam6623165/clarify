@@ -26,6 +26,11 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
+    public Post findByPid(String pid) {
+        return postRepository.findByPid(pid);
+    }
+
+    @Override
     public List<Post> findByCid(String cid) {
         return postRepository.findByCid(cid);
     }

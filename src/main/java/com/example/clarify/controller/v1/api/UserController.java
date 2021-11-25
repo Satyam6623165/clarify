@@ -28,36 +28,14 @@ public class UserController {
         else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
-       log.info("Fetching all users from db");
-       try {
-           List<User> users = userService.findAllUsers();
-           return new ResponseEntity<>(users, HttpStatus.OK);
-       } catch(Exception e) {
-           return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-       }
-    }
-
     @PostMapping
-    public ResponseEntity<User> saveUser(@RequestBody User user) {
+    public ResponseEntity<User> save(@RequestBody User user) {
         log.info("Saving user: {}", user);
         try {
-            User userSaved = userService.save(user);
-            return new ResponseEntity<>(userSaved, HttpStatus.CREATED);
+            User savedUser = userService.save(user);
+            return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
         } catch(Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-    }
-
-    @DeleteMapping
-    public ResponseEntity<Void> deleteAll() {
-        log.info("Deleting all users from db");
-        try {
-            userService.deleteAllUsers();
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch(Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

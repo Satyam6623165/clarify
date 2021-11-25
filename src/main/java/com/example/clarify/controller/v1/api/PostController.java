@@ -1,5 +1,6 @@
 package com.example.clarify.controller.v1.api;
 
+import com.example.clarify.enums.Type;
 import com.example.clarify.model.Post;
 import com.example.clarify.service.PostService;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +30,10 @@ public class PostController {
     public ResponseEntity<Post> save(@RequestBody Post post) {
         try {
             Post savedPost = postService.save(post);
+            if(savedPost.getPostType() == Type.Reply) {
+                Post question = postService.findByPid(savedPost.getReplyTo());
+                question.setReplyCount(question.getReplyCount() + 1);
+            }
             return new ResponseEntity<>(savedPost, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -36,7 +41,7 @@ public class PostController {
     }
 
     @DeleteMapping("/{pid}")
-    public ResponseEntity<Void> delete(@PathVariable String pid) {
+    public ResponseEntity<Void> deleteById(@PathVariable String pid) {
         try {
             postService.deleteById(pid);
             return new ResponseEntity<>(HttpStatus.OK);

@@ -10,5 +10,5 @@ public interface ChannelService {
     void deleteById(String cid);
     Optional<Channel> findByTitle(String title);
     Optional<Channel> findByCid(String cid);
-    List<Channel> findAllChannels();
+    List<Channel> findAll();
 }

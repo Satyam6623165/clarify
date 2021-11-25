@@ -31,7 +31,7 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
-    public List<Tag> findAllTags() {
+    public List<Tag> findAll() {
         return tagRepository.findAll();
     }
 }

@@ -16,9 +16,9 @@ public class TagController {
     private final TagService tagService;
 
     @GetMapping
-    public ResponseEntity<List<Tag>> findAllTags() {
+    public ResponseEntity<List<Tag>> getAll() {
         try {
-            List<Tag> tags = tagService.findAllTags();
+            List<Tag> tags = tagService.findAll();
             return new ResponseEntity<>(tags, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -46,7 +46,7 @@ public class TagController {
     }
 
     @DeleteMapping("/{tid}")
-    public ResponseEntity<Void> delete(@PathVariable String tid) {
+    public ResponseEntity<Void> deleteById(@PathVariable String tid) {
         try {
             tagService.deleteById(tid);
             return new ResponseEntity<>(HttpStatus.OK);

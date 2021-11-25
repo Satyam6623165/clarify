@@ -8,5 +8,5 @@ public interface TagService {
     Tag save(Tag tag);
     void deleteById(String tid);
     List<Tag> findByTitleLikeOrderByTitleAsc(String pattern);
-    List<Tag> findAllTags();
+    List<Tag> findAll();
 }

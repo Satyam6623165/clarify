@@ -22,11 +22,17 @@ public class Post {
 
     private Type postType;
 
+    private String replyTo;
+
     private Date createdAt;
 
     private Date ModifiedAt;
 
     private String content;
+
+    private Long voteCount;
+
+    private long replyCount;
 
     private List<String> tags;
 }

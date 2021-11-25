@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection = "likes")
 @CompoundIndex(def = "{pid : 1, uid : 1}", name = "pid_uid_index", unique = true)
-public class Like {
+public class Vote {
     @Id
     private String id;
 
