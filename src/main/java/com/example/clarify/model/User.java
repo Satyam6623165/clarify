@@ -24,10 +24,4 @@ public class User {
     private String imageUrl;
 
     private Set<Role> roles;
-
-    private Integer lives;
-
-    public User() {
-        this.lives = 3;
-    }
 }

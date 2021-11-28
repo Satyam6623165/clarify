@@ -28,7 +28,9 @@ public class Post {
 
     private Date ModifiedAt;
 
-    private String content;
+    private String title;
+
+    private String description;
 
     private Long voteCount;
 

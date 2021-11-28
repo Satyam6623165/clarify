@@ -17,4 +17,8 @@ public class Channel {
     private String title;
 
     private Permissions permissions;
+
+    Channel() {
+        this.permissions = new Permissions();
+    }
 }

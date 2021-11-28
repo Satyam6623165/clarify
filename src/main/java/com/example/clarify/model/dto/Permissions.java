@@ -9,9 +9,9 @@ public class Permissions {
     private Permission faculty;
     private Permission moderator;
 
-    Permissions() {
-        this.student = Permission.HasNoAccess;
-        this.faculty = Permission.HasNoAccess;
-        this.moderator = Permission.HasNoAccess;
+    public Permissions() {
+        this.student = Permission.CanReadWrite;
+        this.faculty = Permission.CanReadWrite;
+        this.moderator = Permission.CanReadWrite;
     }
 }
