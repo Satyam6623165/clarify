@@ -7,6 +7,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.NotNull;
+
 @Data
 @Document(collection = "channels")
 public class Channel {
@@ -14,6 +16,7 @@ public class Channel {
     private String cid;
 
     @Indexed(unique = true)
+    @NotNull(message = "Channel Title cannot be null")
     private String title;
 
     private Permissions permissions;
