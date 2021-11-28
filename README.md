@@ -10,7 +10,7 @@
 
 - This is the backend of the clarify web application made with Spring boot. 
 - The application is containerised using docker to enable hassle free local dev setup. 
-- For the database mongodb has been used and the application is connected to a Mongodb Atlas cluster (Use free mongodb Atlas cluster which provides 512Mb space). 
+- For the database mongodb has been used and the application is connected to a Mongodb Atlas cluster (Use free mongodb Atlas cluster). 
 
 ## Setting up Locally
 
