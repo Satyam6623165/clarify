@@ -1,4 +1,4 @@
-# Clarify - A highly scalable academic discussion forum
+# Clarify - Academic discussion forum
 ## Submission for Microsoft Engage 2022 🔥
 
 ![Tests](https://github.com/Satyam6623165/clarify/actions/workflows/maven.yml/badge.svg)
