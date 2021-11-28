@@ -33,6 +33,7 @@ public class PostController {
             if(savedPost.getPostType() == Type.Reply) {
                 Post question = postService.findByPid(savedPost.getReplyTo());
                 question.setReplyCount(question.getReplyCount() + 1);
+                postService.save(question);
             }
             return new ResponseEntity<>(savedPost, HttpStatus.CREATED);
         } catch (Exception e) {

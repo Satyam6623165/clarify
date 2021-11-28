@@ -21,7 +21,7 @@ public class Channel {
 
     private Permissions permissions;
 
-    Channel() {
+    public Channel() {
         this.permissions = new Permissions();
     }
 }
